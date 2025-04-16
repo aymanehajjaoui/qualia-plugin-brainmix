@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qualia-plugin-brainmix"
+version = "0.1.0"
+description = "Custom RedPitaya deployment targets for Qualia"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "AGPL-3.0-or-later"}
+dependencies = [
+    "qualia-core>=2.5.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
