@@ -20,9 +20,9 @@ else:
 
 logger = logging.getLogger(__name__)
 
-class RedPitaya(Linux):
+class RedPitaya_Metrics(Linux):
     evaluator = QualiaEvaluator
-    target_name = 'RedPitaya'
+    target_name = 'RedPitaya_Metrics'
 
     def __init__(self,
                  projectdir: str | Path | None = None,

@@ -9,6 +9,7 @@ src/qualia_plugin_brainmix.egg-info/requires.txt
 src/qualia_plugin_brainmix.egg-info/top_level.txt
 src/qualia_plugin_brainmix/deployment/qualia_codegen/RedPitaya.py
 src/qualia_plugin_brainmix/deployment/qualia_codegen/RedPitaya_App.py
+src/qualia_plugin_brainmix/deployment/qualia_codegen/RedPitaya_Metrics.py
 src/qualia_plugin_brainmix/deployment/qualia_codegen/__init__.py
 src/qualia_plugin_brainmix/examples/__init__.py
 src/qualia_plugin_brainmix/examples/RedPitaya_App/plot.py
