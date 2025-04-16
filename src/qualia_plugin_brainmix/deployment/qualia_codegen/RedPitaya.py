@@ -23,22 +23,24 @@ print("[PLUGIN] RedPitaya deployment target loaded from plugin")
 
 class RedPitaya(Linux):
     evaluator = QualiaEvaluator
+    target_name = 'RedPitaya'
 
     def __init__(self,
                  projectdir: str | Path | None = None,
                  outdir: str | Path | None = None) -> None:
         super().__init__(
             projectdir=projectdir if projectdir is not None else
-                resources_to_path(files('qualia_codegen_core.examples')) / 'RedPitaya',
-            outdir=outdir if outdir is not None else Path('out') / 'deploy' / 'RedPitaya'
+                resources_to_path(files('qualia_plugin_brainmix.examples')) / self.target_name,
+            outdir=outdir if outdir is not None else Path('out') / 'deploy' / self.target_name
         )
         self.__size_bin = 'arm-linux-gnueabihf-size'
 
     @override
     def deploy(self, tag: str) -> Deploy | None:
-        logger.info('Running on RedPitaya — skipping deploy')
+        logger.info(f'Running on {self.target_name} — skipping deploy')
         return Deploy(
-            rom_size=self._rom_size(self._outdir / tag / 'RedPitaya', str(self.__size_bin)),
-            ram_size=self._ram_size(self._outdir / tag / 'RedPitaya', str(self.__size_bin)),
+            rom_size=self._rom_size(self._outdir / tag / self.target_name, str(self.__size_bin)),
+            ram_size=self._ram_size(self._outdir / tag / self.target_name, str(self.__size_bin)),
             evaluator=self.evaluator
         )
+

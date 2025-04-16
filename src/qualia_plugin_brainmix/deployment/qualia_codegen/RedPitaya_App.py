@@ -29,7 +29,7 @@ class RedPitaya_App(Linux):
                  outdir: str | Path | None = None) -> None:
         super().__init__(
             projectdir=projectdir if projectdir is not None else
-                resources_to_path(files('qualia_codegen_core.examples')) / 'RedPitaya_App',
+                resources_to_path(files('qualia_plugin_brainmix.examples')) / 'RedPitaya_App',
             outdir=outdir if outdir is not None else Path('out') / 'deploy' / 'RedPitaya_App'
         )
         self.__size_bin = 'arm-linux-gnueabihf-size'
@@ -72,7 +72,7 @@ class RedPitaya_App(Linux):
             logger.info(f"[RedPitaya_App] Model files copied from {generated_model_dir} to {destination_model_dir}")
 
             # Copy static template files from examples/RedPitaya_App
-            template_base = resources_to_path(files('qualia_codegen_core.examples')) / 'RedPitaya_App'
+            template_base = resources_to_path(files('qualia_plugin_brainmix.examples')) / 'RedPitaya_App'
             for folder in ['CMSIS', 'include', 'src', 'ModelOutput', 'DataOutput']:
                 src_folder = template_base / folder
                 dest_folder = destination_root / folder
