@@ -19,6 +19,7 @@ else:
     from typing_extensions import override
 
 logger = logging.getLogger(__name__)
+print("[PLUGIN] RedPitaya deployment target loaded from plugin")
 
 class RedPitaya(Linux):
     evaluator = QualiaEvaluator
